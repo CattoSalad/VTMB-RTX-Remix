@@ -1,6 +1,7 @@
 # Vampire: The Masquerade Bloodlines RTX Remix (WIP)
 
 ![VTMB Logo](vtmb-logo.png "VTMB Logo")
+
 A project to add RTX Remix for Vampire: The Masquerade Bloodlines.
 
 ## Setup:
