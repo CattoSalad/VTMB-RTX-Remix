@@ -4,12 +4,18 @@
 
 A project to add RTX Remix for Vampire: The Masquerade Bloodlines.
 
+## Captures
+
+Captures are located under [`/rtx-remix/captures`](https://github.com/CattoSalad/VTMB-RTX-Remix/tree/main/rtx-remix/captures) folder. Feel free to download and use those with [RTX Remix](https://www.nvidia.com/en-gb/geforce/rtx-remix/https://www.nvidia.com/en-gb/geforce/rtx-remix/).
+
 ## Setup:
 
 Preparing the game:
+
 1. Install [Unofficial Patch](https://www.moddb.com/mods/vtmb-unofficial-patch/downloads) (without Plus Patch)
 
 Enabling RTX Remix Runtime:
+
 1. Install Remix Runtime in main folder with the game's executable (This can be copied over from the RTX Remix sample project.)
 2. Set launch args to `-game Unofficial_Patch -dxlevel 70 +mat_dxlevel 70 -window`
 3. Drop `rtx.conf` in the main directory to import settings the settings.
