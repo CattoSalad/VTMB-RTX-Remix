@@ -14,6 +14,11 @@ Preparing the game:
 
 1. Install [Unofficial Patch](https://www.moddb.com/mods/vtmb-unofficial-patch/downloads) (without Plus Patch)
 
+Install RTX Remix:
+
+Download [RTX Remix](https://www.nvidia.com/en-gb/geforce/rtx-remix/).
+The installation process involves installing Nvidia's omniverse. Once it is installed the RTX Remix extension can be installed.
+
 Enabling RTX Remix Runtime:
 
 1. Install Remix Runtime in main folder with the game's executable (**not** inside the Bin folder)
@@ -28,6 +33,6 @@ Enabling RTX Remix Runtime:
 
 ## Known Issues:
 
-- [ ] Invisible cars - Not present with plus patch, but seems to be an issues through Unofficial Patch 11.1 - 11.5. Investigating which version would best suit using the rtx remix.
+- [x] Invisible cars - Not present with plus patch, but seems to be an issues through Unofficial Patch 11.1 - 11.5. Investigating which version would best suit using the rtx remix. [Temporary Solution](https://github.com/CattoSalad/VTMB-RTX-Remix/issues/1)
 - [ ] Some textures can become invisible when moving around - We believe it's cause by culling settings, some engine tweaks may be required to fix this issue.
 - [ ] Ghost buildings - Some buildings are transparent and a lot of roofs are also affected.
