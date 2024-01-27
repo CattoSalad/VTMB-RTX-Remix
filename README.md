@@ -6,10 +6,13 @@ A project to add RTX Remix for Vampire: The Masquerade Bloodlines.
 
 ## Setup:
 
+Preparing the game:
 1. Install [Unofficial Patch](https://www.moddb.com/mods/vtmb-unofficial-patch/downloads) (without Plus Patch)
-2. Install Remix Runtime in main folder with the game's executable (This can be copied over from the RTX Remix sample project.)
-3. Set launch args to `-game Unofficial_Patch -dxlevel 70 +mat_dxlevel 70 -window`
-4. Drop `rtx.conf` in the main directory to import settings the settings.
+
+Enabling RTX Remix Runtime:
+1. Install Remix Runtime in main folder with the game's executable (This can be copied over from the RTX Remix sample project.)
+2. Set launch args to `-game Unofficial_Patch -dxlevel 70 +mat_dxlevel 70 -window`
+3. Drop `rtx.conf` in the main directory to import settings the settings.
 
 ### What's included on this rtx.conf?
 
