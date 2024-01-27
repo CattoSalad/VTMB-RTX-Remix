@@ -19,7 +19,7 @@ Enabling RTX Remix Runtime:
 1. Install Remix Runtime in main folder with the game's executable (**not** inside the Bin folder)
    - Copy from: `C:\Users\"Your User"\AppData\Local\ov\pkg\rtx-remix-2024.1.1\deps\remix_runtime\runtime`
 2. Set launch args to `-game Unofficial_Patch -dxlevel 70 +mat_dxlevel 70 -window`
-3. Drop `rtx.conf` in the main directory to import settings the settings.
+3. Drop `rtx.conf` in the main directory to import the settings.
 
 ### What's included on this rtx.conf?
 
