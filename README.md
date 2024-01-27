@@ -33,6 +33,6 @@ Enabling RTX Remix Runtime:
 
 ## Known Issues:
 
-- [x] Invisible cars - Not present with plus patch, but seems to be an issues through Unofficial Patch 11.1 - 11.5. Investigating which version would best suit using the rtx remix. [Temporary Solution](https://github.com/CattoSalad/VTMB-RTX-Remix/issues/1)
-- [ ] Some textures can become invisible when moving around - We believe it's cause by culling settings, some engine tweaks may be required to fix this issue.
+- [x] Invisible cars - Not present with plus patch, but seems to be an issues through Unofficial Patch 11.1 - 11.5. Investigating which version would best suit using the rtx remix. [Temporary Solution](https://github.com/CattoSalad/VTMB-RTX-Remix/issues/1) Will be fixed on the next release of plus patch.
+- [ ] Some textures can become invisible when moving around - We believe it's caused by culling settings, some engine tweaks may be required to fix this issue.
 - [ ] Ghost buildings - Some buildings are transparent and a lot of roofs are also affected.
