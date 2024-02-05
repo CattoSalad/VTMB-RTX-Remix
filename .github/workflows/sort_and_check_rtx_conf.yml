@@ -15,6 +15,7 @@ jobs:
       - name: Sort file and
         id: sort_file
         run: |
+          set -x
           git diff --word-diff=porcelain HEAD^ HEAD > /tmp/changes.txt
 
           cat ./rtx.conf | grep -v '^\s*#' | grep . | sort > /tmp/sorted_rtx.conf
