@@ -1,0 +1,36 @@
+name: Sort and Check Rtx Conf file
+
+on: [push, pull_request]
+
+jobs:
+  sort_and_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Sort file and
+        id: sort_file
+        run: |
+          git diff --word-diff=porcelain HEAD^ HEAD > /tmp/changes.txt
+
+          # Replace the existing file with a sorted version, excluding comments and empty lines, and including specific lines
+          cat ./rtx.conf | grep -v '^\s*#' | grep . | sort > /tmp/sorted_file.txt
+          grep -E -- '-?0x[0-9a-fA-F]{8}' /tmp/changes.txt >> /tmp/sorted_file.txt
+
+          # Replace the original file with the sorted version
+          cat /tmp/sorted_file.txt > ./rtx.conf
+
+      - name: Check for changes in specific lines
+        run: |
+          changed=$(cat /tmp/changes.txt | grep "^+" && cat /tmp/changes.txt | grep "-")
+          if [ -z "$changed" ]; then
+            echo "No changes found in specific lines."
+          else
+            echo "Changes detected in specific lines:"
+            echo "$changed"
+          fi
+          exit 0
