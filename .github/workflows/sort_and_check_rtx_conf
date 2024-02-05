@@ -17,12 +17,10 @@ jobs:
         run: |
           git diff --word-diff=porcelain HEAD^ HEAD > /tmp/changes.txt
 
-          # Replace the existing file with a sorted version, excluding comments and empty lines, and including specific lines
-          cat ./rtx.conf | grep -v '^\s*#' | grep . | sort > /tmp/sorted_file.txt
-          grep -E -- '-?0x[0-9a-fA-F]{8}' /tmp/changes.txt >> /tmp/sorted_file.txt
+          cat ./rtx.conf | grep -v '^\s*#' | grep . | sort > /tmp/sorted_rtx.conf
+          grep -E -- '-?0x[0-9a-fA-F]{8}' /tmp/changes.txt >> /tmp/sorted_rtx.conf
 
-          # Replace the original file with the sorted version
-          cat /tmp/sorted_file.txt > ./rtx.conf
+          cat /tmp/sorted_rtx.conf > ./rtx.conf
 
       - name: Check for changes in specific lines
         run: |
