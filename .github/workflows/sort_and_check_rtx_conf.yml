@@ -15,6 +15,10 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Run python unit tests
+        run: |
+          python.exe -m unittest scripts/test_sort_rtx_conf.py
+
       - name: Sort lines in rtx.conf
         run: |
           python scripts/sort_rtx_conf.py
