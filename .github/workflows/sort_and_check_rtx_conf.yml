@@ -3,33 +3,25 @@ name: Sort and Check Rtx Conf file
 on: [push, pull_request]
 
 jobs:
-  sort_and_check:
+  sort-lines:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          fetch-depth: 2
+          python-version: "3.x"
 
-      - name: Sort file and
-        id: sort_file
+      - name: Sort lines in rtx.conf
         run: |
-          set -x
-          git diff --word-diff=porcelain HEAD^ HEAD > /tmp/changes.txt
+          python scripts/sort_rtx_conf.py
 
-          cat ./rtx.conf | grep -v '^\s*#' | grep . | sort > /tmp/sorted_rtx.conf
-          grep -E -- '-?0x[0-9a-fA-F]{8}' /tmp/changes.txt >> /tmp/sorted_rtx.conf
-
-          cat /tmp/sorted_rtx.conf > ./rtx.conf
-
-      - name: Check for changes in specific lines
+      - name: Commit and Push Changes
         run: |
-          changed=$(cat /tmp/changes.txt | grep "^+" && cat /tmp/changes.txt | grep "-")
-          if [ -z "$changed" ]; then
-            echo "No changes found in specific lines."
-          else
-            echo "Changes detected in specific lines:"
-            echo "$changed"
-          fi
-          exit 0
+          git config --global user.name 'Clean Rtx Conf Bot'
+          git config --global user.email 'auto-sort-bot@example.com'
+          git add ./rtx.conf
+          git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push)
