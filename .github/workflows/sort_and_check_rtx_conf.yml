@@ -37,8 +37,8 @@ jobs:
         id: changes_output
         run: |
           curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf 
-          output=$(python scripts/generate_diff.py)
-          echo "::set-output name=output::$output"
+          output=$(python scripts/generate_diff.py) > changes.txt
+          echo "output=$(cat changes.txt)" >> $GITHUB_ENV
 
       - name: Post comment
         if: github.event_name == 'pull_request'
@@ -49,4 +49,4 @@ jobs:
             ```${{ steps.results_output.outputs.output }}```
 
             Changes:
-            ```${{ steps.changes_output.outputs }}```
+            ```${{ env.output }}```

@@ -14,18 +14,21 @@ def process_file(file_path):
 def generate_diff(old_file, new_file):
     old_data = process_file(old_file)
     new_data = process_file(new_file)
+    result = ""
 
     for key in new_data.keys():
         if key in old_data:
             added, removed = compare_hashes(old_data[key], new_data[key])
             if added or removed:
-                print(f"Changes in {key}:")
+                result += (f"Changes in {key}:\n")
                 if added:
-                    print(f"  Added: {', '.join(added)}")
+                    result += (f"  Added: {', '.join(added)}\n")
                 if removed:
-                    print(f"  Removed: {', '.join(removed)}")
+                    result += (f"  Removed: {', '.join(removed)}\n")
         else:
             print(f"New key in {new_file}: {key}")
+
+    print(result)
 
 if __name__ == "__main__":
     generate_diff('old_rtx.conf', 'rtx.conf')
