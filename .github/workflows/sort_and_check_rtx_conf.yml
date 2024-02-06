@@ -33,13 +33,12 @@ jobs:
           git add ./rtx.conf
           git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push)
 
-      - name: Sort lines in rtx.conf
+      - name: Generate diff
         id: changes_output
         run: |
           curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf 
-          python scripts/generate_diff.py > changes.txt
-          cat changes.txt
-          echo "output=$(cat changes.txt)" >> $GITHUB_ENV
+          output=$(python scripts/generate_diff.py)
+          echo "::set-output name=output::$output"
 
       - name: Post comment
         if: github.event_name == 'pull_request'
@@ -47,8 +46,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ${{ steps.results_output.outputs.output }}
+            ```${{ steps.results_output.outputs.output }}```
 
             Changes:
-            ```${{ env.output }}```
             ```${{ steps.changes_output.outputs.output }}```
