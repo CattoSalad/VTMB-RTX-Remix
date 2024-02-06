@@ -38,6 +38,7 @@ jobs:
         run: |
           curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf 
           output=$(python scripts/generate_diff.py) > changes.txt
+          cat changes.txt
           echo "output=$(cat changes.txt)" >> $GITHUB_ENV
 
       - name: Post comment
