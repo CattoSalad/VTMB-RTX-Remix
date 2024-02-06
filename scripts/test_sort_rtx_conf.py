@@ -40,12 +40,19 @@ class TestSortFileMethods(unittest.TestCase):
         self.assertTrue(result[0])
         self.assertEqual(result[1], "All texture hashes are unique")
 
+    def test_validate_unique_hashes_valid_on_different_lines(self):
+        lines = ["rtx.lightConverter = 0x5B14D81FE1EC269F\n", "rtx.uiTextures = 0x5B14D81FE1EC269F\n"]
+        result = validate_unique_hashes(lines)
+
+        self.assertTrue(result[0])
+        self.assertEqual(result[1], "All texture hashes are unique")
+
     def test_validate_unique_hashes_when_invalid(self):
-        lines = ["rtx.lightConverter = 0x8879E5EC1AE4587B\n", "rtx.uiTextures = 0x8879E5EC1AE4587B\n"]
+        lines = ["rtx.lightConverter = 0x8879E5EC1AE4587B, 0x8879E5EC1AE4587B\n", "rtx.uiTextures = 0x8879E5EC1AE4587B\n"]
         result = validate_unique_hashes(lines)
 
         self.assertFalse(result[0])
-        self.assertEqual(result[1], "Duplicate texture hashes found: 0x8879E5EC1AE4587B")
+        self.assertEqual(result[1], "Duplicate texture hashes found in: rtx.lightConverter = 0x8879E5EC1AE4587B")
 
     def test_validate_duplicated_keys_when_valid(self):
         lines = ["rtx.lightConverter = 0x5B14D81FE1EC269F\n", "rtx.uiTextures = 0x8879E5EC1AE4587B\n"]
@@ -61,17 +68,45 @@ class TestSortFileMethods(unittest.TestCase):
         self.assertFalse(result[0])
         self.assertEqual(result[1], "Duplicate key found: rtx.lightConverter")
 
-    @patch('sys.exit')
-    def test_validate_unique_hashes(self, mock_exit):
-        sort_file('test_rtx_with_duplicate_hashes.conf')
-        print("Calls made to sys.exit:", mock_exit.call_args_list)
-        mock_exit.assert_called_with("Duplicate texture hashes found: 0x3F1B8E8E71AE6D50. All keys are unique.")
+    def test_validate_unique_hashes(self):
+        lines_to_write = [
+            "rtx.lightConverter = 0x3F1B8E8E71AE6D50, 0x3F1B8E8E71AE6D50, 0x5B14D81FE1EC269F\n",
+            "rtx.uiTextures = 0x3F1B8E8E71AE6D50\n"
+        ]
 
-    @patch('sys.exit')
-    def test_validate_duplicated_keys(self, mock_exit):
+        with open('test_rtx_with_duplicate_hashes.conf', 'w') as file:
+            file.writelines(lines_to_write)
+
+        expected_lines = [
+            "rtx.lightConverter = 0x3F1B8E8E71AE6D50, 0x5B14D81FE1EC269F\n",
+            "rtx.uiTextures = 0x3F1B8E8E71AE6D50\n"
+        ]
+
+        sort_file('test_rtx_with_duplicate_hashes.conf')
+
+        with open('test_rtx_with_duplicate_hashes.conf', 'r') as file:
+            actual_lines = file.readlines()
+        self.assertEqual(actual_lines, expected_lines)
+
+    def test_validate_duplicated_keys_and_merge_duplicates(self):
+        lines_to_write = [
+            "rtx.lightConverter = 0x3F1B8E8E71AE6D50\n",
+            "rtx.lightConverter = 0x3F1B8E8E71AE6D50, 0x5B14D81FE1EC269F\n"
+        ]
+
+        with open('test_rtx_with_duplicate_keys.conf', 'w') as file:
+            file.writelines(lines_to_write)
+
+        expected_lines = [
+            "rtx.lightConverter = 0x3F1B8E8E71AE6D50, 0x5B14D81FE1EC269F\n"
+        ]
+
         sort_file('test_rtx_with_duplicate_keys.conf')
-        print("Calls made to sys.exit:", mock_exit.call_args_list)
-        mock_exit.assert_called_with("All texture hashes are unique. Duplicate key found: rtx.uiTextures.")
+
+        with open('test_rtx_with_duplicate_keys.conf', 'r') as file:
+            actual_lines = file.readlines()
+        self.assertEqual(actual_lines, expected_lines)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -21,8 +21,10 @@ jobs:
           python -m unittest test_sort_rtx_conf.py
 
       - name: Sort lines in rtx.conf
+        id: results_output
         run: |
-          python scripts/sort_rtx_conf.py
+          output=$(python scripts/sort_rtx_conf.py)
+          echo "output=$output" >> $GITHUB_OUTPUT
 
       - name: Commit and Push Changes
         run: |
@@ -30,3 +32,24 @@ jobs:
           git config --global user.email 'auto-sort-bot@example.com'
           git add ./rtx.conf
           git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push)
+
+      - name: Generate diff
+        id: changes_output
+        run: |
+          curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf
+          {
+            echo 'DIFF_OUTPUT<<EOF'
+            python scripts/generate_diff.py
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post comment
+        if: github.event_name == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ```${{ steps.results_output.outputs.output }}```
+
+            Changes:
+            ```${{ steps.changes_output.outputs.diff_output }}```
