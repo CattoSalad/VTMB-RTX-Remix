@@ -36,6 +36,7 @@ jobs:
       - name: Generate diff
         id: changes_output
         run: |
+          curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf
           {
             echo 'DIFF_OUTPUT<<EOF'
             python scripts/generate_diff.py
