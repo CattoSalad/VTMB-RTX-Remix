@@ -38,28 +38,28 @@ class TestSortFileMethods(unittest.TestCase):
         result = validate_unique_hashes(lines)
 
         self.assertTrue(result[0])
-        self.assertEquals(result[1], "All texture hashes are unique")
+        self.assertEqual(result[1], "All texture hashes are unique")
 
     def test_validate_unique_hashes_when_invalid(self):
         lines = ["rtx.lightConverter = 0x8879E5EC1AE4587B\n", "rtx.uiTextures = 0x8879E5EC1AE4587B\n"]
         result = validate_unique_hashes(lines)
 
         self.assertFalse(result[0])
-        self.assertEquals(result[1], "Duplicate texture hashes found: 0x8879E5EC1AE4587B")
+        self.assertEqual(result[1], "Duplicate texture hashes found: 0x8879E5EC1AE4587B")
 
     def test_validate_duplicated_keys_when_valid(self):
         lines = ["rtx.lightConverter = 0x5B14D81FE1EC269F\n", "rtx.uiTextures = 0x8879E5EC1AE4587B\n"]
         result = validate_duplicated_keys(lines)
 
         self.assertTrue(result[0])
-        self.assertEquals(result[1], "All keys are unique")
+        self.assertEqual(result[1], "All keys are unique")
 
     def test_validate_duplicated_keys_when_invalid(self):
         lines = ["rtx.lightConverter = 0x5B14D81FE1EC269F\n", "rtx.lightConverter = 0x8879E5EC1AE4587B\n"]
         result = validate_duplicated_keys(lines)
 
         self.assertFalse(result[0])
-        self.assertEquals(result[1], "Duplicate key found: rtx.lightConverter")
+        self.assertEqual(result[1], "Duplicate key found: rtx.lightConverter")
 
     @patch('sys.exit')
     def test_validate_unique_hashes(self, mock_exit):
