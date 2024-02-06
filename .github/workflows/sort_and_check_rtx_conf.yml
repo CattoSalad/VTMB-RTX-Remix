@@ -41,7 +41,7 @@ jobs:
             echo 'DIFF_OUTPUT<<EOF'
             python scripts/generate_diff.py
             echo EOF
-          } >> "$GITHUB_ENV"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Post comment
         if: github.event_name == 'pull_request'
