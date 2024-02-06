@@ -52,4 +52,4 @@ jobs:
             ```${{ steps.results_output.outputs.output }}```
 
             Changes:
-            ```${{ steps.changes_output.outputs.output }}```
+            ```${{ steps.changes_output.outputs.diff_output }}```
