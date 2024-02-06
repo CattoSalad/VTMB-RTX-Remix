@@ -24,7 +24,7 @@ jobs:
         id: results_output
         run: |
           output=$(python scripts/sort_rtx_conf.py)
-          echo "::set-output name=output::$output"
+          echo "output=$output" >> $GITHUB_OUTPUT
 
       - name: Commit and Push Changes
         run: |

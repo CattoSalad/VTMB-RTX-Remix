@@ -14,7 +14,7 @@ def process_file(file_path):
 def generate_diff(old_file, new_file):
     old_data = process_file(old_file)
     new_data = process_file(new_file)
-    result = ""
+    result = "\n"
 
     for key in new_data.keys():
         if key in old_data:
