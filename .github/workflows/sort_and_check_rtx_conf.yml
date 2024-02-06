@@ -36,9 +36,11 @@ jobs:
       - name: Generate diff
         id: changes_output
         run: |
-          curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf 
-          output=$(python scripts/generate_diff.py)
-          echo "::set-output name=output::$output"
+          {
+            echo 'DIFF_OUTPUT<<EOF'
+            python scripts/generate_diff.py
+            echo EOF
+          } >> "$GITHUB_ENV"
 
       - name: Post comment
         if: github.event_name == 'pull_request'

@@ -20,13 +20,13 @@ def generate_diff(old_file, new_file):
         if key in old_data:
             added, removed = compare_hashes(old_data[key], new_data[key])
             if added or removed:
-                result += (f"Changes in {key}: ")
+                result += (f"Changes in {key}:\n")
                 if added:
-                    result += (f"  Added: {', '.join(added)}  ")
+                    result += (f"  Added: {', '.join(added)}\n")
                 if removed:
-                    result += (f"  Removed: {', '.join(removed)}  ")
+                    result += (f"  Removed: {', '.join(removed)}\n")
         else:
-            print(f"New key in {new_file}: {key}  ")
+            result += (f"New key in {new_file}: {key}\n")
 
     print(result)
 
