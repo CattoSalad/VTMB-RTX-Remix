@@ -37,8 +37,7 @@ jobs:
         id: changes_output
         run: |
           curl -o old_rtx.conf https://raw.githubusercontent.com/CattoSalad/VTMB-RTX-Remix/main/rtx.conf 
-          output=$(python scripts/generate_diff.py) > changes.txt
-          cat changes.txt
+          python scripts/generate_diff.py > changes.txt
           echo "output=$(cat changes.txt)" >> $GITHUB_ENV
 
       - name: Post comment
@@ -47,7 +46,8 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ```${{ steps.results_output.outputs.output }}```
+            ${{ steps.results_output.outputs.output }}
 
             Changes:
             ```${{ env.output }}```
+            ```${{ steps.changes_output.outputs.output }}```
