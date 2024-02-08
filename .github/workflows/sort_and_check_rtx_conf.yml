@@ -55,4 +55,4 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             Changes:
-            ```${{ steps.changes_output.outputs.diff_output }}```
+            ${{ steps.changes_output.outputs.diff_output }}
