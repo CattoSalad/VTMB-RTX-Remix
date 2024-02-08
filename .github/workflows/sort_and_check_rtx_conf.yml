@@ -1,14 +1,19 @@
 name: Sort and Check Rtx Conf file
 
-on: [pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   sort-lines:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout PR Branch
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -31,7 +36,7 @@ jobs:
           git config --global user.name 'Clean Rtx Conf Bot'
           git config --global user.email 'auto-sort-bot@example.com'
           git add ./rtx.conf
-          git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push)
+          git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push origin ${{ github.event.pull_request.head.ref }})
 
       - name: Generate diff
         id: changes_output
@@ -49,7 +54,5 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ```${{ steps.results_output.outputs.output }}```
-
             Changes:
             ```${{ steps.changes_output.outputs.diff_output }}```
