@@ -4,6 +4,13 @@
         string lightspeed_game_name = "Vampire: Bloodlines"
         string lightspeed_layer_type = "replacement"
     }
+    subLayers = [
+        @./santa_monica.usda@,
+        @./single_player.usda@,
+        @./downtown_la.usda@,
+        @./hollywood.usda@,
+        @./chinatown.usda@
+    ]
     timeCodesPerSecond = 24
     upAxis = "Z"
 )

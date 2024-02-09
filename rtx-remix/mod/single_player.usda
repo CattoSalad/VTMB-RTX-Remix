@@ -1,0 +1,27 @@
+#usda 1.0
+(
+    subLayers = [
+        @./single_player/sp_endsequences_a.usda@,
+        @./single_player/sp_endsequences_b.usda@,
+        @./single_player/sp_epilogue.usda@,
+        @./single_player/sp_genesisdevice_1.usda@,
+        @./single_player/sp_giovanni_1.usda@,
+        @./single_player/sp_giovanni_2a.usda@,
+        @./single_player/sp_giovanni_2b.usda@,
+        @./single_player/sp_giovanni_3.usda@,
+        @./single_player/sp_giovanni_4.usda@,
+        @./single_player/sp_giovanni_5.usda@,
+        @./single_player/sp_masquerade_1.usda@,
+        @./single_player/sp_ninesintro.usda@,
+        @./single_player/sp_observatory_1.usda@,
+        @./single_player/sp_observatory_2.usda@,
+        @./single_player/sp_soc_1.usda@,
+        @./single_player/sp_soc_2.usda@,
+        @./single_player/sp_soc_3.usda@,
+        @./single_player/sp_soc_4.usda@,
+        @./single_player/sp_taxiride.usda@,
+        @./single_player/sp_theatre.usda@,
+        @./single_player/sp_tutorial_1.usda@,
+    ]
+    upAxis = "Z"
+)

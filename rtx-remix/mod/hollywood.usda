@@ -1,0 +1,27 @@
+#usda 1.0
+(
+    subLayers = [
+        @./hollywood/hw_609_1.usda@,
+        @./hollywood/hw_ash_sewer_1.usda@,
+        @./hollywood/hw_asphole_1.usda@,
+        @./hollywood/hw_cemetery_1.usda@,
+        @./hollywood/hw_chateau_1.usda@,
+        @./hollywood/hw_chinese_1.usda@,
+        @./hollywood/hw_hub_1.usda@,
+        @./hollywood/hw_jewelry_1.usda@,
+        @./hollywood/hw_luckystar_1.usda@,
+        @./hollywood/hw_metalhead_1.usda@,
+        @./hollywood/hw_netcafe_1.usda@,
+        @./hollywood/hw_redspot_1.usda@,
+        @./hollywood/hw_sinbin_1.usda@,
+        @./hollywood/hw_tawni_1.usda@,
+        @./hollywood/hw_vesuvius_1.usda@,
+        @./hollywood/hw_warrens_1.usda@,
+        @./hollywood/hw_warrens_2.usda@,
+        @./hollywood/hw_warrens_2b.usda@,
+        @./hollywood/hw_warrens_3.usda@,
+        @./hollywood/hw_warrens_4.usda@,
+        @./hollywood/hw_warrens_5.usda@,
+    ]
+    upAxis = "Z"
+)

@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    subLayers = [
+        @./la_downtown/la_abandoned_building_1.usda@,
+        @./la_downtown/la_bradbury_1.usda@,
+        @./la_downtown/la_bradbury_2.usda@,
+        @./la_downtown/la_bradbury_3.usda@,
+        @./la_downtown/la_chantry_1.usda@,
+        @./la_downtown/la_confession_1.usda@,
+        @./la_downtown/la_crackhouse_1.usda@,
+        @./la_downtown/la_dane_1.usda@,
+        @./la_downtown/la_empire_1.usda@,
+        @./la_downtown/la_empire_2.usda@,
+        @./la_downtown/la_empire_3.usda@,
+        @./la_downtown/la_expipe_1.usda@,
+        @./la_downtown/la_hospital_1.usda@,
+        @./la_downtown/la_hub_1.usda@,
+        @./la_downtown/la_library_1.usda@,
+        @./la_downtown/la_malkavian_1.usda@,
+        @./la_downtown/la_malkavian_2.usda@,
+        @./la_downtown/la_malkavian_3.usda@,
+        @./la_downtown/la_malkavian_3b.usda@,
+        @./la_downtown/la_malkavian_4.usda@,
+        @./la_downtown/la_malkavian_5.usda@,
+        @./la_downtown/la_museum_1.usda@,
+        @./la_downtown/la_parkinggarage_1.usda@,
+        @./la_downtown/la_plaguebearer_sewer_1.usda@,
+        @./la_downtown/la_skyline_1.usda@,
+        @./la_downtown/la_ventruetower_1.usda@,
+        @./la_downtown/la_ventruetower_1b.usda@,
+        @./la_downtown/la_ventruetower_2.usda@,
+        @./la_downtown/la_ventruetower_3.usda@,
+    ]
+    upAxis = "Z"
+)
