@@ -22,11 +22,11 @@ def generate_diff(old_file, new_file):
             if added or removed:
                 result += (f"Changes in {key}:\n")
                 if added:
-                    result += (f"  Added: {', '.join(added)}\n")
+                    result += (f"  Added:\n - {', '.join(added)}\n")
                 if removed:
-                    result += (f"  Removed: {', '.join(removed)}\n")
+                    result += (f"  Removed:\n - {', '.join(removed)}\n")
         else:
-            result += (f"New key in {new_file}: {key}\n")
+            result += (f"New key in {new_file}: {key}\n Added:\n {new_data[key]}\n")
 
     print(result)
 
