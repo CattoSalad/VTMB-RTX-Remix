@@ -7,6 +7,21 @@ This page is a Work in Progress.
 
 `-dxlevel 80 +mat_dxlevel 80 +r_worldlights 16 +r_novis 1 +r_frustumcullworld 0 +c_frustumcull 0 +r_occlusion 0 +r_shadows 0 +mat_queue_mode 0 +r_unloadlightmaps 1 +mat_drawwater 0 -novid` so I am investigating how each one of these helps us get the most out of the source engine for RTX Remix to work optimally.
 
+#### What do these options do?
+`-dxlevel <level>`: Forces the game to start using specified DirectX API (aka feature level) version.
+`+mat_dxlevel [DirectX version]`: changes the DirectX (feature level) mode used within a Source game.
+`-dxlevel <level>` specifies extra presets while `+mat_dxlevel [DirectX version]` just changes the feature level.
+`+r_worldlights`: number of world lights to use per vertex.
+`+r_novis`: Enabling this disables the PVS system, causing the whole world to be rendered at once.
+`+r_frustumcullworld`: ?
+`+c_frustumcull`: ?
+`+r_occlusion`: Activate/deactivate the occlusion system.
+`+r_shadows`: Determines whether shadows are drawn.
+`+mat_queue_mode [-1,0,1,2]`: This setting determines the threading mode the material system uses. A value of -1 uses the default for your system, a value of 0 uses synchronous single thread, 1 uses queued single threaded mode, and value of 2 uses multi-threaded mode.
+`+r_unloadlightmaps`: Controls whether lightmap data is unloaded from memory after being updated. When set to 1, the engine unloads lightmap data to save memory. Useful for debugging or when frequent changes to lighting occur.
+`+mat_drawwater`: enable/disable the water textures.
+`-novid`: Disable the intro video.
+
 #### How do these affect VTMB?
 For `-dxlevel 80` and `+mat_dxlevel 80` we know we can safely get down to 70 as that was previously done.
 
