@@ -2,6 +2,7 @@ name: Sort and Check Rtx Conf file
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - main
     paths:
