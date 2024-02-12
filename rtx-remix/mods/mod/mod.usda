@@ -1,0 +1,55 @@
+#usda 1.0
+(
+    customLayerData = {
+        string lightspeed_game_name = "Vampire: Bloodlines"
+        string lightspeed_layer_type = "replacement"
+    }
+    timeCodesPerSecond = 24
+    upAxis = "Z"
+)
+
+over "RootNode"
+{
+    over "lights"
+    {
+        over "light_F5C5216984BEC0CB"
+        {
+            float inputs:intensity = 0
+            float3 xformOp:rotateZYX = (0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (18.02761397071457, 376.39481561414345, 224.8871224902437)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZYX", "xformOp:scale"]
+        }
+
+        over "light_5EDD3C6122DBBAFB"
+        {
+            float inputs:intensity = 30000
+        }
+    }
+
+    over "Looks"
+    {
+        over "mat_81E57C54A30F8128"
+        {
+            over "Shader"
+            {
+                float inputs:reflection_roughness_constant = 0.3 (
+                    customData = {
+                        float default = 0.5
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    displayGroup = "Base Material"
+                    displayName = "Roughness Amount"
+                    doc = """Higher roughness values lead to more blurry reflections, use 0 for perfectly smooth.  (Used if no texture is specified).
+
+"""
+                    hidden = false
+                )
+            }
+        }
+    }
+}
+

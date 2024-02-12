@@ -1,0 +1,73 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary SelectionHistoryList = {
+            string "0" = "/RootNode/instances/inst_11357BBAB6E6843D_0/mesh"
+            string "1" = "/RootNode/lights/light_5EDD3C6122DBBAFB"
+            string "10" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "11" = ""
+            string "12" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "13" = ""
+            string "14" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "15" = ""
+            string "16" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "17" = ""
+            string "18" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "19" = ""
+            string "2" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "20" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "21" = ""
+            string "22" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "23" = ""
+            string "24" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "25" = ""
+            string "3" = ""
+            string "4" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "5" = ""
+            string "6" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "7" = ""
+            string "8" = "/RootNode/lights/light_F5C5216984BEC0CB"
+            string "9" = ""
+        }
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (500, 0, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (271.1442139291233, -30.968836166238695, 493.96149193143845)
+                double3 target = (176.65097464115934, 654.5250677825305, -26.7775361603143)
+            }
+            dictionary Right = {
+                double3 position = (0, -500, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 500)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        string lightspeed_layer_type = "workfile"
+        dictionary omni_layer = {
+            string authoring_layer = "./mod.usda"
+            dictionary locked = {
+                bool "../../../../../../../Program Files (x86)/Steam/steamapps/common/Vampire The Masquerade - Bloodlines/rtx-remix/captures/sm_pawnshop_1_2024-02-08_23-01-30.usd" = 1
+                bool "../../captures/sp_theatre_inside_theatre_1.usd" = 1
+                bool "./deps/captures/sm_pawnshop_1_2024-02-08_22-29-17.usd" = 1
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    endTimeCode = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @./mod.usda@,
+        @../../captures/sp_theatre_inside_theatre_1.usd@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Z"
+)
+
