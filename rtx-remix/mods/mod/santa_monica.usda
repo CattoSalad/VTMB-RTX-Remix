@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    subLayers = [
+        @./santa_monica/sm_apartment_1.usda@,
+        @./santa_monica/sm_asylum_1.usda@,
+        @./santa_monica/sm_bailbonds_1.usda@,
+        @./santa_monica/sm_basement_1.usda@,
+        @./santa_monica/sm_beachhouse_1.usda@,
+        @./santa_monica/sm_coffee_1.usda@,
+        @./santa_monica/sm_diner_1.usda@,
+        @./santa_monica/sm_gallery_1.usda@,
+        @./santa_monica/sm_hub_1.usda@,
+        @./santa_monica/sm_hub_2.usda@,
+        @./santa_monica/sm_junkyard_1.usda@,
+        @./santa_monica/sm_medical_1.usda@,
+        @./santa_monica/sm_oceanhouse_1.usda@,
+        @./santa_monica/sm_oceanhouse_2.usda@,
+        @./santa_monica/sm_pawnshop_1.usda@,
+        @./santa_monica/sm_pawnshop_2.usda@,
+        @./santa_monica/sm_pier_1.usda@,
+        @./santa_monica/sm_shreknet_1.usda@,
+        @./santa_monica/sm_smoke_1.usda@,
+        @./santa_monica/sm_tattoo.usda@,
+        @./santa_monica/sm_vamparena.usda@,
+        @./santa_monica/sm_warehouse_1.usda@,
+    ]
+    upAxis = "Z"
+)
