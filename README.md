@@ -36,6 +36,8 @@ As of right now the game is playable, allowing you to capture scenes, replace as
 
 A demo of the first Haven is being prepared as a demo of what we intend to achieve with this project.
 
+- [Maps status](https://docs.google.com/spreadsheets/d/1YT8pDlQ9t2QfCrWI-bpDiXkVMTRCeSeuKXfKRx9q8Vc/edit?usp=drive_link)
+
 - [Materials status](https://docs.google.com/spreadsheets/d/1m0PmmWQZsil5DT6Q3EL437tDnqPiFBxCXPbf6PHIpB0/edit?usp=drive_link)
 
 - [Model status](https://docs.google.com/spreadsheets/d/1PgCTIqSVg_mVAJs04IKayr8BnIdhFkiBNqFP85U95C8/edit?usp=drive_link)
