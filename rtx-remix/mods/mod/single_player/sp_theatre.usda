@@ -1,0 +1,51 @@
+#usda 1.0
+(
+    upAxis = "Z"
+)
+
+over "RootNode"
+{
+    over "lights"
+    {
+        over "light_F5C5216984BEC0CB"
+        {
+            float inputs:intensity = 0
+        }
+
+        over "light_1561E2D5D3114344"
+        {
+            float inputs:intensity = 44
+        }
+
+        over "light_5EDD3C6122DBBAFB"
+        {
+            float inputs:intensity = 30000
+        }
+    }
+
+    over "Looks"
+    {
+        over "mat_81E57C54A30F8128"
+        {
+            over "Shader"
+            {
+                float inputs:reflection_roughness_constant = 0.3 (
+                    customData = {
+                        float default = 0.5
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    displayGroup = "Base Material"
+                    displayName = "Roughness Amount"
+                    doc = """Higher roughness values lead to more blurry reflections, use 0 for perfectly smooth.  (Used if no texture is specified).
+
+"""
+                    hidden = false
+                )
+            }
+        }
+    }
+}
+

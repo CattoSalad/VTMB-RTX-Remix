@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    subLayers = [
+        @./chinatown/ch_cloud_1.usda@,
+        @./chinatown/ch_dragon_1.usda@,
+        @./chinatown/ch_fishmarket_1.usda@,
+        @./chinatown/ch_fulab_1.usda@,
+        @./chinatown/ch_glaze_1.usda@,
+        @./chinatown/ch_hub_1.usda@,
+        @./chinatown/ch_lotus_1.usda@,
+        @./chinatown/ch_ramen_1.usda@,
+        @./chinatown/ch_shrekhub.usda@,
+        @./chinatown/ch_temple_1.usda@,
+        @./chinatown/ch_temple_2.usda@,
+        @./chinatown/ch_temple_3.usda@,
+        @./chinatown/ch_temple_4.usda@,
+        @./chinatown/ch_tsengs_1.usda@,
+        @./chinatown/ch_zhaos_1.usda@,
+    ]
+    upAxis = "Z"
+)
