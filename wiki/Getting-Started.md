@@ -47,6 +47,9 @@ Note: Your game's `rtx-remix` folder will need to be emtpy.
 
 This will link your game's rtx-remix folder to the rtx-remix folder on the repo which will allow you to take captures directly to the repo. Update and make changes to the mod, while facilitating colaboration.
 
+Aditionally link your rtx.conf file so changes go through to the repo and your game loads the latest changes.
+* run `mklink /J "PATH TO GAME\rtx.conf" "PATH TO REPO\rtx.conf"`
+
 ##### Adding the mod to RTX Remix
 
 - Go to Setup Project
