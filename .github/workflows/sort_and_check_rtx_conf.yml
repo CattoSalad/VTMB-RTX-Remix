@@ -31,13 +31,6 @@ jobs:
           output=$(python scripts/sort_rtx_conf.py)
           echo "output=$output" >> $GITHUB_OUTPUT
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name 'Clean Rtx Conf Bot'
-          git config --global user.email 'auto-sort-bot@example.com'
-          git add ./rtx.conf
-          git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push origin ${{ github.event.pull_request.head.ref }})
-
       - name: Generate diff
         id: changes_output
         run: |
@@ -48,8 +41,16 @@ jobs:
             echo EOF
           } >> "$GITHUB_OUTPUT"
 
+      - name: Commit and Push Changes
+        if: steps.changes_output.outputs.diff_output != ''
+        run: |
+          git config --global user.name 'Clean Rtx Conf Bot'
+          git config --global user.email 'auto-sort-bot@example.com'
+          git add ./rtx.conf
+          git diff --staged --exit-code || (git commit -m "Clean up rtx.conf" && git push origin ${{ github.event.pull_request.head.ref }})
+
       - name: Post comment
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && steps.changes_output.outputs.diff_output != ''
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.pull_request.number }}
