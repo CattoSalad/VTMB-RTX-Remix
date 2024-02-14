@@ -38,12 +38,17 @@ Replace **PATH TO GAME** with the path to your game and replace **PATH TO REPO**
 
 RECOMMENDED if you intend to work on the repo
 
-- Rename or Delete your `rtx-remix` folder inside of your game folder
+- Rename or Delete your `rtx-remix` folder inside of your game folder (to something like `rtx-remix-backup`)
 - Open CMD as Admin
 
-* run `mklink /J "PATH TO GAME\rtx-remix\vtmb_rtx_remix.usd" "PATH TO REPO\rtx-remix\vtmb_rtx_remix.usd"`
+* run `mklink /J "PATH TO GAME\rtx-remix" "PATH TO REPO\rtx-remix"`
+
+Note: Your game's `rtx-remix` folder will need to be emtpy.
 
 This will link your game's rtx-remix folder to the rtx-remix folder on the repo which will allow you to take captures directly to the repo. Update and make changes to the mod, while facilitating colaboration.
+
+Aditionally link your rtx.conf file so changes go through to the repo and your game loads the latest changes.
+* run `mklink /J "PATH TO GAME\rtx.conf" "PATH TO REPO\rtx.conf"`
 
 ##### Adding the mod to RTX Remix
 

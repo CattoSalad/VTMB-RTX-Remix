@@ -32,9 +32,17 @@ Enabling RTX Remix Runtime:
 
 As of right now the game is playable, allowing you to capture scenes, replace assets and add lights. There are some visual glitches such as tall buildings not showing up properly and sky boxes not being rendered correctly. Other issues include TVs, there isn't currently support for multiple cameras meaning TVs don't work ingame.
 
+### Collaborating:
+
+If you want to help out, regardless of your skill set you can find the setup guide here - [Getting started guide](https://github.com/CattoSalad/VTMB-RTX-Remix/wiki/Getting-Started#contributing).
+
+Join the VTMB thread on the [RTX Remix Showcase discord](https://discord.gg/rtxremix).
+
 ### Progress:
 
 A demo of the first Haven is being prepared as a demo of what we intend to achieve with this project.
+
+- [Maps status](https://docs.google.com/spreadsheets/d/1YT8pDlQ9t2QfCrWI-bpDiXkVMTRCeSeuKXfKRx9q8Vc/edit?usp=drive_link)
 
 - [Materials status](https://docs.google.com/spreadsheets/d/1m0PmmWQZsil5DT6Q3EL437tDnqPiFBxCXPbf6PHIpB0/edit?usp=drive_link)
 
