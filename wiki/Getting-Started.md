@@ -13,7 +13,9 @@ The installation process involves installing Nvidia's omniverse. Once it is inst
 ### Enabling RTX Remix Runtime:
 
 1. Install Remix Runtime in main folder with the game's executable. Unlike other Source engine games, this will be outside of the Bin folder.
-   - Copy from: `C:\Users\"Your User"\AppData\Local\ov\pkg\rtx-remix-2024.1.1\deps\r emix_runtime\runtime` or [rtx-remix releases](https://github.com/NVIDIAGameWorks/rtx-remix/releases) (0.4.1 seems to cause some issues with captures so go for 0.4.0 for now)
+   - Copy from: `C:\Users\"Your User"\AppData\Local\ov\pkg\rtx-remix-2024.1.1\deps\r emix_runtime\runtime` 
+   - **OR** [rtx-remix releases](https://github.com/NVIDIAGameWorks/rtx-remix/releases) (0.4.1 seems to cause some issues with captures so go for 0.4.0 for now)
+   - **OR** Use the [RTX Remix Downloader script](https://github.com/Kim2091/RTX-Remix-Downloader) more info about it [here](https://discord.com/channels/1028444667789967381/1098785289838796850/1202002632672280578). 
 2. Set launch args to `-game Unofficial_Patch -dxlevel 70 +mat_dxlevel 70 +r_frustumcullworld 0 +c_frustumcull 0 -window` [(More about args here)](https://github.com/CattoSalad/VTMB-RTX-Remix/wiki/Launch-Args)
 3. Drop [`rtx.conf`](https://github.com/CattoSalad/VTMB-RTX-Remix/blob/main/rtx.conf) in the main directory to import the settings.
 
@@ -41,7 +43,7 @@ RECOMMENDED if you intend to work on the repo
 - Rename or Delete your `rtx-remix` folder inside of your game folder (to something like `rtx-remix-backup`)
 - Open CMD as Admin
 
-* run `mklink /J "PATH TO GAME\rtx-remix" "PATH TO REPO\rtx-remix"`
+* run `mklink /J "PATH TO GAME\rtx-remix" "PATH TO REPO\rtx-remix"` (if you have issues with this feel free to reach out on the threat on the Nvidia RTX Remix discord channel)
 
 Note: Your game's `rtx-remix` folder will need to be emtpy.
 

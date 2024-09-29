@@ -53,8 +53,12 @@ A demo of the first Haven is being prepared as a demo of what we intend to achie
 Captures are located under [`/rtx-remix/captures`](https://github.com/CattoSalad/VTMB-RTX-Remix/tree/main/rtx-remix/captures) folder. Feel free to download and use those with [RTX Remix](https://www.nvidia.com/en-gb/geforce/rtx-remix/https://www.nvidia.com/en-gb/geforce/rtx-remix/).
 
 ## Known Issues:
+- [] Water - Currently water is invisible and there may be other issues around that.
+- [] Invisible rain - Rain is currently invisible, as well as smoke and some flames.
+- [] Generated particles/lights - When feeding the light source that appears is too bright.
 
-- [ ] Ghost buildings - Some buildings are transparent and a lot of roofs are also affected.
-- [ ] The sky is broken - The sky is a bit strange now. Hopefully categorising some textures should help this. Some different launch arguments may be required.
+## Previous Issues:
+- [x] Ghost buildings - Some buildings are transparent and a lot of roofs are also affected. - King David came up with a fix for the rtx remix runtime to be able to handle skyboxes for older source games. However please note that some of these changes are still missing from the mainline rtx runtime. 
+- [x] The sky is broken - The sky is a bit strange now. Hopefully categorising some textures should help this. Some different launch arguments may be required.
 - [x] Invisible cars - Not present with plus patch, but seems to be an issues through Unofficial Patch 11.1 - 11.5. Investigating which version would best suit using the rtx remix. [Temporary Solution](https://github.com/CattoSalad/VTMB-RTX-Remix/issues/1) - Should be fixed on the latest version of Unofficial Patch 11.5+.
 - [x] Some textures can become invisible when moving around - We believe it's caused by culling settings, some engine tweaks may be required to fix this issue. - Solved with extra launch args.
