@@ -15,7 +15,7 @@ The installation process involves installing Nvidia's omniverse. Once it is inst
 1. Install Remix Runtime in main folder with the game's executable. Unlike other Source engine games, this will be outside of the Bin folder.
    - **RECOMMENDED** [rtx-remix releases](https://github.com/NVIDIAGameWorks/rtx-remix/releases).
    - **OR** Use the [RTX Remix Downloader script](https://github.com/Kim2091/RTX-Remix-Downloader) more info about it [here](https://discord.com/channels/1028444667789967381/1098785289838796850/1202002632672280578).
-2. Set launch args to `-game Unofficial_Patch -dxlevel 70 +mat_dxlevel 70  +r_novis 1 +r_frustumcullworld 0 +c_frustumcull 0 +r_occlusion 0 +r_shadows 0 +mat_queue_mode 0 +r_unloadlightmaps 1 +mat_drawwater 0 -novid -window` [(More about args here)]
+2. Set launch args to `-game Unofficial_Patch -dxlevel 70 +r_novis 1 +r_frustumcullworld 0 +r_shadows 0 +mat_drawwater 0 -novid` [(More about args here)]
 3. Drop [`rtx.conf`](https://github.com/CattoSalad/VTMB-RTX-Remix/blob/main/rtx.conf) in the main directory to import the settings.
 
 ## Contributing
